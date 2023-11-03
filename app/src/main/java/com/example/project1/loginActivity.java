@@ -1,9 +1,15 @@
 package com.example.project1;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextPaint;
 import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -17,115 +23,77 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class loginActivity extends AppCompatActivity {
-    private Button Regbtn;
-    private EditText Email, Password;
-    private Button Loginbtn;
-    private FirebaseAuth firebaseAuth;
-    private TextView ForgotPassword;
 
-
+    EditText email, password;
+    private FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Email = findViewById(R.id.email);
-        Password = findViewById(R.id.password);
-        Loginbtn = findViewById(R.id.loginbtn);
-        ForgotPassword = findViewById(R.id.forgotpassword);
+        auth = FirebaseAuth.getInstance();
 
-        firebaseAuth = FirebaseAuth.getInstance();
+        email = findViewById(R.id.email);
+        password = findViewById(R.id.password);
 
-        Loginbtn.setOnClickListener(new View.OnClickListener() {
+
+        //back button
+        Button myButton = findViewById(R.id.regbtn);
+
+        myButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginUser();
+                // Create an Intent to start the second activity
+                Intent intent = new Intent(loginActivity.this, SignupActivity.class);
+
+                // Start the second activity
+                startActivity(intent);
             }
         });
-        Regbtn = findViewById(R.id.regbtn);
-        Regbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openSignupActivity();
-
-            }
-        });
-
     }
 
-    private void loginUser() {
-            String email = Email.getText().toString().trim();
-            String password = Password.getText().toString().trim();
 
-            firebaseAuth.signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(task -> {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(loginActivity.this, "Login successful",
-                                    Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(loginActivity.this,
-                                    HomeActivity.class));
-                            finish();
-                        } else {
-                            Toast.makeText(loginActivity.this, "Login failed",
-                                    Toast.LENGTH_SHORT).show();
-                        }
-                    });
+    public void signIn(View view) {
 
-    }
+        String userEmail = email.getText().toString();
+        String userPassword = password.getText().toString();
 
-    public void openSignupActivity() {
-        Intent intent = new Intent(this, SignupActivity.class);
-        startActivity(intent);
+        if (TextUtils.isEmpty(userEmail)) {
+            Toast.makeText(this,"Enter Email Address", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-        ForgotPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(loginActivity.this);
-                View dialogView = getLayoutInflater().inflate(R.layout.dialog_forget,null);
-                EditText emailBox = dialogView.findViewById(R.id.emailbox);
+        if (TextUtils.isEmpty(userPassword)) {
+            Toast.makeText(this,"Enter Password", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-                builder.setView(dialogView);
-                AlertDialog dialog = builder.create();
+        if (userPassword.length() < 8){
+            Toast.makeText(this,"Password too short", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-                dialogView.findViewById(R.id.btnReset).setOnClickListener(new View.OnClickListener() {
+        auth.signInWithEmailAndPassword(userEmail,userPassword)
+                .addOnCompleteListener(loginActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
-                    public void onClick(View v) {
-                        String userEmail = emailBox.getText().toString();
+                    public void onComplete(@NonNull Task<AuthResult> task) {
 
-                        if (TextUtils.isEmpty(userEmail) && !Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()){
-                            Toast.makeText(loginActivity.this, "Enter your registered email id", Toast.LENGTH_SHORT).show();
-                            return;
+                        if(task.isSuccessful()){
+                            Toast.makeText(loginActivity.this,"Login Successful",Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(loginActivity.this,HomeActivity.class));
+                        }else {
+                            Toast.makeText(loginActivity.this,"Error"+task.getException(),Toast.LENGTH_SHORT).show();
+
                         }
-
-                        firebaseAuth.sendPasswordResetEmail(userEmail).addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()){
-                                    Toast.makeText(loginActivity.this, "Check your email", Toast.LENGTH_SHORT).show();
-                                    dialog.dismiss();
-                                } else {
-                                    Toast.makeText(loginActivity.this, "Unable to send, Failed", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
                     }
                 });
 
-                dialogView.findViewById(R.id.btncancle).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        dialog.dismiss();
-                    }
-                });
-                if (dialog.getWindow() != null){
-                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
-                }
-                dialog.show();
-            }
-        });
+        startActivity(new Intent(loginActivity.this,HomeActivity.class));
 
     }
+
 }

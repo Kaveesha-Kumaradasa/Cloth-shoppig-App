@@ -73,11 +73,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.486" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:visibility="gone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
 
     <Button
@@ -86,6 +81,7 @@
         android:layout_height="48dp"
         android:background="@drawable/pink_button"
         android:text="Sign Up"
+        android:onClick="SignUp"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
