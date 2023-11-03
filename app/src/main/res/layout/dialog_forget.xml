@@ -9,92 +9,90 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/dialogbox"
-    app:cornerRadius ="20dp"
-    app:layout_constraintTop_toTopOf="parent"
-    android:background="@color/white">
-
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dialogbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/forgottitle"
-        android:text="Forgot Password"
-        android:padding="10dp"
-        android:textSize="17sp"
-        android:background="@color/pink"
-        android:textColor="@color/white"
-        android:drawableLeft="@drawable/baseline_lock_reset_24"
-        android:drawablePadding="8dp"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/desc"
-        android:text="Enter your email address"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_margin="8dp"
-        android:textSize="16sp"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@id/forgottitle"
-        app:layout_constraintBottom_toTopOf="@+id/emailbox"/>
-
-    <EditText
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/emailbox"
-        android:textColor="@color/pink"
-        android:textSize="16sp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="30dp"
-        android:maxLines="1"
-        android:backgroundTint="@color/pink"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/white"
+        app:cornerRadius="20dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/forgottitle"/>
-
-    <Button
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:id="@+id/btncancle"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="16dp"
-        android:text="Cancel"
-        android:background="@drawable/pink_button"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        app:cornerRadius ="20dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/emailbox"
-        app:layout_constraintBottom_toBottomOf="@id/dialogbox"
-        app:layout_constraintEnd_toStartOf="@id/btnReset"/>
-    
-    <Button
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:id="@+id/btnReset"
-        android:text="Reset"
-        android:background="@drawable/pink_button"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="40dp"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        app:cornerRadius ="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/dialogbox"
-        app:layout_constraintStart_toEndOf="@id/btncancle"/>
+        app:layout_constraintEnd_toEndOf="parent">
 
+        <TextView
+            android:id="@+id/forgottitle"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:background="@color/pink"
+            android:paddingStart="20dp"
+            android:gravity="center_vertical"
+            android:drawableLeft="@drawable/baseline_lock_reset_24"
+            android:drawablePadding="8dp"
+            android:text="Forgot Password"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Enter your email address"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/forgottitle" />
 
+        <EditText
+            android:id="@+id/emailbox"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/pink"
+            android:hint="Email"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:maxLines="1"
+            android:textColor="@color/pink"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/desc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
+        <Button
+            android:id="@+id/btncancle"
+            android:layout_width="143dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/pink_button"
+            android:text="Cancel"
+            android:onClick="fpBack"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:cornerRadius="20dp"
+            app:layout_constraintEnd_toStartOf="@id/btnReset"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emailbox" />
 
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="112dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/pink_button"
+            android:text="Reset"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:cornerRadius="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emailbox" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
