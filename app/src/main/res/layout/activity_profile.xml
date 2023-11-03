@@ -86,9 +86,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:itemBackground="@color/pink"
+        android:background="@drawable/bottomlayout"
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
+        app:itemPaddingTop="14dp"
         app:menu="@menu/menu" />
 
 
