@@ -3,6 +3,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#80FFFFFF</color>
+<<<<<<< Updated upstream
     <color name="pink">#C64090</color>
+    <color name="pink2">#eba7ac</color>
+    <color name="pink3">#fbd2d7</color>
+
+>>>>>>> Stashed changes
+
 
 </resources>
