@@ -1,53 +1,65 @@
 package com.example.project1;
 
 
-import static com.example.project1.R.id.home;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 public class HomeActivity extends AppCompatActivity {
 
-
-
-    BottomNavigationView bottomNavigationView;
-
-    @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        bottomNavigationView = findViewById(R.id.bottom_nav);
-        bottomNavigationView.setSelectedItemId(home);
+        ImageView image1 = findViewById(R.id.image1);
+        ImageView image2 = findViewById(R.id.image2);
+        ImageView image3 = findViewById(R.id.image3);
+        ImageView image4 = findViewById(R.id.image4);
 
 
-        bottomNavigationView.setOnItemSelectedListener(item -> {
-            int itemId = item.getItemId();
-            if (itemId == R.id.home) {
-                return true;
-            } else if (itemId == R.id.cart) {
-                startActivity(new Intent(getApplicationContext(), CartActivity.class));
-                overridePendingTransition(0, 0);
-                finish();
-                return true;
-            } else if (itemId == R.id.profile) {
-                startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
-                overridePendingTransition(0, 0);
-                finish();
-                return true;
-            } else {
-                return false;
+        image1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                openInfoActivity();
             }
         });
 
+        image2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                openInfoActivity();
+            }
+        });
 
+        image3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                openInfoActivity();
+            }
+        });
+
+        image4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                openInfoActivity();
+            }
+        });
 
     }
+
+    private void openInfoActivity() {
+        Intent intent = new Intent(this, ThirdActivity.class); // Updated to open "activity_info"
+        startActivity(intent);
 }
+}
+
+
+

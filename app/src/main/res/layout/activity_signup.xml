@@ -86,6 +86,7 @@
         android:layout_height="48dp"
         android:background="@drawable/pink_button"
         android:text="Sign Up"
+        android:onClick="SignUp"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

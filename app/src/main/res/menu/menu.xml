@@ -8,9 +8,6 @@
         android:id="@+id/cart"
         android:icon="@drawable/cart"/>
 
-    <item
-        android:id="@+id/profile"
-        android:icon="@drawable/profile"/>
 
 
 </menu>

@@ -31,12 +31,8 @@ public class CartActivity extends AppCompatActivity {
                 return true;
             } else if (itemId == R.id.cart) {
                 return true;
-            } else if (itemId == R.id.profile) {
-                startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
-                overridePendingTransition(0, 0);
-                finish();
-                return true;
-            } else {
+            }
+            else {
                 return false;
             }
         });

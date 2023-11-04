@@ -18,12 +18,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class loginActivity extends AppCompatActivity {
+
     EditText email, password;
     private FirebaseAuth auth;
     TextView forgotpassword;
-
-    private Button Loginbtn;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +33,6 @@ public class loginActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         forgotpassword = findViewById(R.id.forgotpassword);
-        Loginbtn = findViewById(R.id.loginbtn);
-
 
         forgotpassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +43,7 @@ public class loginActivity extends AppCompatActivity {
         });
 
 
-        //back button
+
         Button myButton = findViewById(R.id.regbtn);
 
         myButton.setOnClickListener(new View.OnClickListener() {
@@ -62,12 +58,6 @@ public class loginActivity extends AppCompatActivity {
         });
     }
 
-            /*Loginbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loginUser();*/
-
-
 
     public void signIn(View view) {
 
@@ -75,37 +65,37 @@ public class loginActivity extends AppCompatActivity {
         String userPassword = password.getText().toString();
 
         if (TextUtils.isEmpty(userEmail)) {
-            Toast.makeText(this, "Enter Email Address", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Enter Email Address", Toast.LENGTH_SHORT).show();
             return;
         }
 
         if (TextUtils.isEmpty(userPassword)) {
-            Toast.makeText(this, "Enter Password", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Enter Password", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        if (userPassword.length() < 8) {
-            Toast.makeText(this, "Password too short", Toast.LENGTH_SHORT).show();
+        if (userPassword.length() < 8){
+            Toast.makeText(this,"Password too short", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        auth.signInWithEmailAndPassword(userEmail, userPassword)
+        auth.signInWithEmailAndPassword(userEmail,userPassword)
                 .addOnCompleteListener(loginActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
-                        if (task.isSuccessful()) {
-                            Toast.makeText(loginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(loginActivity.this, HomeActivity.class));
-                        } else {
-                            Toast.makeText(loginActivity.this, "Error" + task.getException(), Toast.LENGTH_SHORT).show();
+                        if(task.isSuccessful()){
+                            Toast.makeText(loginActivity.this,"Login Successful",Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(loginActivity.this,HomeActivity.class));
+                        }else {
+                            Toast.makeText(loginActivity.this,"Error"+task.getException(),Toast.LENGTH_SHORT).show();
 
                         }
                     }
                 });
 
-        startActivity(new Intent(loginActivity.this, HomeActivity.class));
-
+        startActivity(new Intent(loginActivity.this,HomeActivity.class));
 
     }
+
 }
