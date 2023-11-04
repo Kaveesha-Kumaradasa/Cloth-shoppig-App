@@ -76,12 +76,12 @@
 
     <Button
         android:id="@+id/s"
-        android:layout_width="75dp"
-        android:layout_height="44dp"
+        android:layout_width="74dp"
+        android:layout_height="57dp"
         android:background="@drawable/graybutton"
         android:text="S"
-        android:textSize="20sp"
         android:textAlignment="center"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.086"
