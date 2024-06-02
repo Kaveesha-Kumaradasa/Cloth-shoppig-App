@@ -1,3 +1,4 @@
+/*IM/2020/073*/
 package com.example.project1;
 
 import android.content.Intent;
@@ -33,3 +34,4 @@ public class InActivity extends AppCompatActivity {
         startActivity(intent);
     }
 }
+/*IM/2020/073*/

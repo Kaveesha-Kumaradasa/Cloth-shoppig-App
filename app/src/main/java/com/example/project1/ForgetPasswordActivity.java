@@ -1,3 +1,4 @@
+/*IM/2020/059*/
 package com.example.project1;
 
 import android.content.Intent;
@@ -21,6 +22,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
     EditText email;
     FirebaseAuth mAuth;
     String resetEmail;
+    Button btncancle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +31,17 @@ public class ForgetPasswordActivity extends AppCompatActivity {
 
         resetBtn = findViewById(R.id.btnReset);
         email = findViewById(R.id.emailbox);
-
+        btncancle = findViewById(R.id.btncancle);
         mAuth = FirebaseAuth.getInstance();
+
+        btncancle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ForgetPasswordActivity.this, loginActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
         resetBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,3 +85,4 @@ public class ForgetPasswordActivity extends AppCompatActivity {
 
     }
 
+/*IM/2020/059*/

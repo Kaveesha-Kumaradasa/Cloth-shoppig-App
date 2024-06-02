@@ -1,30 +1,56 @@
-<RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".HomeActivity">
+<?xml version="1.0" encoding="utf-8"?>
 
-        <!-- Navigation bar on the left -->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#70FDC9DB"
+    android:padding="20dp"
+    tools:context=".HomeActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <!-- Navigation -->
         <LinearLayout
             android:id="@+id/navigationBar"
-            android:layout_width="75dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_width="80dp"
+            android:layout_height="530dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="120dp">
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="95dp"
+            android:background="#70FDC9DB"
+            android:orientation="vertical">
 
-            <!-- Add your navigation items here with text and icons -->
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
                 android:gravity="center"
-                android:layout_marginBottom="20dp">
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Frocks" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -35,22 +61,10 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
                 android:gravity="center"
-                android:layout_marginBottom="20dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Dresses" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_marginBottom="20dp">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -61,9 +75,10 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_marginBottom="20dp"
                 android:gravity="center"
-                android:layout_marginBottom="20dp">
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -74,144 +89,284 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center">
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="sarees" />
 
             </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sportware" />
 
 
         </LinearLayout>
 
-        <!-- Right-side images in two rows -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <!-- Right-side images  -->
+        <ScrollView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_toEndOf="@id/navigationBar"
-            android:layout_below="@id/searchBar"
-            android:layout_marginTop="50dp"
-            android:layout_marginStart="16dp">
+            android:layout_marginTop="60dp">
 
-            <!-- First row of images -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical"
+                android:layout_toEndOf="@id/navigationBar"
+                android:layout_below="@id/hometext"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="16dp">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:id="@+id/images"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    app:cardElevation="20dp"
-                    app:cardCornerRadius="20dp">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                <!-- First row of images -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="80dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
 
-                        <ImageView
-                            android:id="@+id/image1"
-                            android:layout_width="180dp"
-                            android:layout_height="180dp"
-                            android:layout_marginTop="15dp"
-                            android:src="@drawable/image1" />
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/images"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        app:cardElevation="20dp"
+                        app:cardCornerRadius="20dp">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    app:cardElevation="20dp"
-                    app:cardCornerRadius="20dp">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                            <ImageView
+                                android:id="@+id/image1"
+                                android:layout_width="180dp"
+                                android:layout_height="180dp"
+                                android:layout_marginTop="15dp"
+                                android:src="@drawable/image1" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
 
-                        <ImageView
-                            android:layout_width="180dp"
-                            android:layout_height="180dp"
-                            android:id="@+id/image2"
-                            android:src="@drawable/image2"
-                            android:layout_marginTop="15dp"
-                            android:layout_centerHorizontal="true"/>
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        app:cardElevation="20dp"
+                        app:cardCornerRadius="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="180dp"
+                                android:layout_height="180dp"
+                                android:id="@+id/image2"
+                                android:src="@drawable/image2"
+                                android:layout_marginTop="15dp"
+                                android:layout_centerHorizontal="true"/>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <!-- Second row of images -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="80dp"
+                    android:layout_marginTop="0dp"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/images2"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        app:cardElevation="20dp"
+                        app:cardCornerRadius="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="180dp"
+                                android:layout_height="200dp"
+                                android:id="@+id/image3"
+                                android:src="@drawable/image3"
+                                android:layout_marginTop="15dp"
+                                android:layout_centerHorizontal="true"/>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        app:cardElevation="20dp"
+                        app:cardCornerRadius="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="180dp"
+                                android:layout_height="200dp"
+                                android:id="@+id/image4"
+                                android:src="@drawable/image4"
+                                android:layout_marginTop="15dp"
+                                android:layout_centerHorizontal="true"/>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <!-- third row of images -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="80dp"
+                    android:layout_marginTop="0dp"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/images4"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        app:cardElevation="20dp"
+                        app:cardCornerRadius="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="180dp"
+                                android:layout_height="180dp"
+                                android:id="@+id/image5"
+                                android:src="@drawable/image5"
+                                android:layout_marginTop="15dp"
+                                android:layout_centerHorizontal="true"/>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        app:cardElevation="20dp"
+                        app:cardCornerRadius="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="180dp"
+                                android:layout_height="180dp"
+                                android:id="@+id/image6"
+                                android:src="@drawable/image6"
+                                android:layout_marginTop="15dp"
+                                android:layout_centerHorizontal="true"/>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <!-- forth row of images -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="80dp"
+                    android:layout_marginTop="0dp"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/images6"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        app:cardElevation="20dp"
+                        app:cardCornerRadius="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="180dp"
+                                android:layout_height="180dp"
+                                android:id="@+id/image7"
+                                android:src="@drawable/image7"
+                                android:layout_marginTop="15dp"
+                                android:layout_centerHorizontal="true"/>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        app:cardElevation="20dp"
+                        app:cardCornerRadius="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="180dp"
+                                android:layout_height="180dp"
+                                android:id="@+id/image8"
+                                android:src="@drawable/image8"
+                                android:layout_marginTop="15dp"
+                                android:layout_centerHorizontal="true"/>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
             </LinearLayout>
+        </ScrollView>
 
-            <!-- Second row of images -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:id="@+id/images2"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    app:cardElevation="20dp"
-                    app:cardCornerRadius="20dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:layout_width="180dp"
-                            android:layout_height="200dp"
-                            android:id="@+id/image3"
-                            android:src="@drawable/image3"
-                            android:layout_marginTop="15dp"
-                            android:layout_centerHorizontal="true"/>
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    app:cardElevation="20dp"
-                    app:cardCornerRadius="20dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:layout_width="180dp"
-                            android:layout_height="200dp"
-                            android:id="@+id/image4"
-                            android:src="@drawable/image4"
-                            android:layout_marginTop="15dp"
-                            android:layout_centerHorizontal="true"/>
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
-        </LinearLayout>
 
         <!-- Search bar at the top -->
 
-        <EditText
-            android:id="@+id/searchBar"
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="419dp"
+            android:layout_height="76dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.428"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/headerone" />
+
+
+        <TextView
+            android:id="@+id/hometext"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="-90dp"
-            android:layout_marginTop="16dp"
-            android:layout_toEndOf="@id/navigationBar"
-            android:hint="Search"
-            android:padding="8dp" />
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="20dp"
+            android:text="Home"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
 
 
         <LinearLayout
@@ -220,45 +375,21 @@
             android:layout_alignParentBottom="true"
             android:orientation="horizontal">
 
-            <!-- Add your toolbar items here with smaller dimensions -->
 
-            <ImageButton
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:src="@drawable/icon1" />
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@drawable/bottomlayout"
+                app:menu="@menu/menu" />
 
-            <ImageButton
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:src="@drawable/icon2"
-                android:layout_margin="5dp"
-                android:scaleType="fitCenter"
-                android:adjustViewBounds="true" />
 
-            <ImageButton
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:src="@drawable/icon3"
-                android:layout_margin="5dp"
-                android:scaleType="fitCenter"
-                android:adjustViewBounds="true" />
 
-            <ImageButton
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:src="@drawable/icon4"
-                android:layout_margin="5dp"
-                android:scaleType="fitCenter"
-                android:adjustViewBounds="true" />
+
+
         </LinearLayout>
 
     </RelativeLayout>
 
-
+</FrameLayout>

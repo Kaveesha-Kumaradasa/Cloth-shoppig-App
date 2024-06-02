@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.108"
-        app:srcCompat="@drawable/image3" />
+        app:srcCompat="@drawable/image5" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -61,7 +61,6 @@
         app:layout_constraintVertical_bias="0.171" />
 
     <Button
-        android:id="@+id/addbtn"
         android:layout_width="105dp"
         android:layout_height="52dp"
         android:background="@drawable/graybutton"

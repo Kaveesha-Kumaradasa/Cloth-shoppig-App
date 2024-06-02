@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.108"
-        app:srcCompat="@drawable/image3" />
+        app:srcCompat="@drawable/image2" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -49,7 +49,7 @@
         android:id="@+id/textView"
         android:layout_width="184dp"
         android:layout_height="47dp"
-        android:text="Rs. 3500"
+        android:text="Rs. 3000"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@color/black"
@@ -61,7 +61,6 @@
         app:layout_constraintVertical_bias="0.171" />
 
     <Button
-        android:id="@+id/addbtn"
         android:layout_width="105dp"
         android:layout_height="52dp"
         android:background="@drawable/graybutton"

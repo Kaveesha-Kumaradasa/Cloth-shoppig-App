@@ -1,3 +1,4 @@
+/*IM/2020/039*/
 package com.example.project1;
 
 import android.content.Intent;
@@ -55,12 +56,12 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void updateDrawState(TextPaint ds) {
                 super.updateDrawState(ds);
-                ds.setColor(Color.BLUE);
+                ds.setColor(Color.BLACK);
                 ds.setUnderlineText(false);
             }
         };
 
-        ss.setSpan(clickableSpan1, 0, 5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ss.setSpan(clickableSpan1, 0, 6, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         textView.setText(ss);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
@@ -105,3 +106,4 @@ public class SignupActivity extends AppCompatActivity {
                 });
     }
 }
+/*IM/2020/039*/

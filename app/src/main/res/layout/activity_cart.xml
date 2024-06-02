@@ -1,150 +1,724 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#70FDC9DB"
+    android:padding="20dp"
     tools:context=".CartActivity">
 
-
-    <EditText
-        android:id="@+id/product"
-        android:layout_width="312dp"
-        android:layout_height="50dp"
-        android:hint="Product"
-        android:padding="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.393"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.187" />
-
-    <EditText
-        android:id="@+id/barcode"
-        android:layout_width="312dp"
-        android:layout_height="50dp"
-        android:hint="Barcode"
-        android:padding="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.393"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.293" />
-
-    <EditText
-        android:id="@+id/price"
-        android:layout_width="312dp"
-        android:layout_height="50dp"
-        android:hint="Price"
-        android:padding="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.393"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.387"
-        tools:ignore="DuplicateIds" />
-
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="312dp"
-        android:layout_height="50dp"
-        android:autofillHints=""
-        android:hint="Quantity"
-
-        android:padding="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.393"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.487" />
-
-    <EditText
-        android:id="@+id/Subtotal"
-        android:layout_width="312dp"
-        android:layout_height="50dp"
-        android:hint="Subtotal"
-        android:padding="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.393"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.587" />
-
     <Button
-        android:id="@+id/proceedbtn"
-        android:layout_width="245dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="52dp"
-        android:background="@drawable/pink_button"
-        android:text="Update Cart"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
+        android:id="@+id/backb"
+        android:layout_width="35dp"
+        android:layout_height="34dp"
+        android:background="@drawable/baseline_arrow_back_ios_24"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Subtotal"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/proceedbtn"
-        android:layout_width="300dp"
-        android:layout_height="49dp"
-        android:background="@drawable/pink_button"
-        android:text="Proceed to Checkout"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Subtotal"
-        app:layout_constraintVertical_bias="0.755"
-        tools:ignore="DuplicateIds,MissingConstraints" />
-
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_nav"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:background="@drawable/bottomlayout"
-        app:itemIconTint="@drawable/selector"
-        app:itemTextColor="@drawable/selector"
-        app:itemPaddingTop="14dp"
-        app:menu="@menu/menu" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="419dp"
-        android:layout_height="76dp"
-        app:layout_constraintBottom_toBottomOf="@+id/bottom_nav"
+        app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.003"
-        app:srcCompat="@drawable/cl2" />
+        app:layout_constraintVertical_bias="0.02" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
 
-    <TextView
-        android:id="@+id/carttext"
-        android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/carttext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="     Cart"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+                app:layout_constraintEnd_toEndOf="@+id/imageView3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="" />
+
+            <Button
+                android:id="@+id/btn_order"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/pinkbutton"
+                android:text="order"
+                android:textColor="#ffff"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+        <!-- for scroll view -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:layout_marginTop="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- default card- empty item-->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/empty_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="#C9C9C9"
+                    android:layout_margin="10dp">
+
+
+
+                </androidx.cardview.widget.CardView>
+
+                <!--first cart for frock1 -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/frock1_card"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp"
+                    app:cardBackgroundColor="#8AECECEC"
+                    android:layout_margin="10dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="111xx"
+                                    android:textSize="20sp"
+                                    android:textColor="#212121"
+                                    android:paddingTop="15sp"
+                                    android:paddingLeft="10sp"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Rs.1500"
+                                    android:textSize="20sp"
+                                    android:textColor="#212121"
+                                    android:padding="10dp"
+                                    android:paddingTop="15sp" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                                <Button
+                                    android:id="@+id/btn_remove_frock1"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#F8F8F8"
+                                    android:padding="5dp"
+                                    android:text="-"
+                                    android:textSize="20sp"/>
+                                <TextView
+                                    android:id="@+id/frock1_num_view"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"/>
+                                <Button
+                                    android:id="@+id/btn_add_frock1"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#F8F8F8"
+                                    android:padding="5dp"
+                                    android:text="+"
+                                    android:textSize="20sp" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!--card for frock2-->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/frock2_card"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp"
+                    app:cardBackgroundColor="#8AECECEC"
+                    android:layout_margin="10dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="222xx"
+                                    android:textSize="20sp"
+                                    android:textColor="#212121"
+                                    android:paddingTop="15sp"
+                                    android:paddingLeft="10sp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Rs.4500"
+                                    android:textSize="20sp"
+                                    android:textColor="#212121"
+                                    android:padding="10dp"
+                                    android:paddingTop="12sp"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                                <Button
+                                    android:id="@+id/btn_remove_frock2"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#F8F8F8"
+                                    android:padding="5dp"
+                                    android:text="-"
+                                    android:textSize="20sp" />
+                                <TextView
+                                    android:id="@+id/frock2_num_view"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"/>
+                                <Button
+                                    android:id="@+id/btn_add_frock2"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#F8F8F8"
+                                    android:padding="5dp"
+                                    android:text="+"
+                                    android:textSize="20sp" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!--card for frock3 -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/ice_frock3"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp"
+                    app:cardBackgroundColor="#8AECECEC"
+                    android:layout_margin="10dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="333xx"
+                                    android:textSize="20sp"
+                                    android:textColor="#212121"
+                                    android:paddingTop="15sp"
+                                    android:paddingLeft="10sp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Rs.2400"
+                                    android:textSize="20sp"
+                                    android:textColor="#212121"
+                                    android:padding="10dp"
+                                    android:paddingTop="12sp"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                                <Button
+                                    android:id="@+id/btn_remove_frock3"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#F8F8F8"
+                                    android:padding="5dp"
+                                    android:text="-"
+                                    android:textSize="20sp" />
+                                <TextView
+                                    android:id="@+id/frock3_num_view"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"/>
+                                <Button
+                                    android:id="@+id/btn_add_frock3"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#F8F8F8"
+                                    android:padding="5dp"
+                                    android:text="+"
+                                    android:textSize="20sp" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!--card for frock4 -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/frock4_card"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp"
+                    app:cardBackgroundColor="#8AECECEC"
+                    android:layout_margin="10dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="444xx"
+                                    android:textSize="20sp"
+                                    android:textColor="#212121"
+                                    android:paddingTop="15sp"
+                                    android:paddingLeft="10sp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Rs.3000"
+                                    android:textSize="20sp"
+                                    android:textColor="#212121"
+                                    android:padding="10dp"
+                                    android:paddingTop="12sp"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                                <Button
+                                    android:id="@+id/btn_remove_frock4"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#F8F8F8"
+                                    android:padding="5dp"
+                                    android:text="-"
+                                    android:textSize="20sp" />
+                                <TextView
+                                    android:id="@+id/frock4_num_view"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"/>
+                                <Button
+                                    android:id="@+id/btn_add_frock4"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#F8F8F8"
+                                    android:padding="5dp"
+                                    android:text="+"
+                                    android:textSize="20sp" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!--card for frock5 -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/frock5_card"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp"
+                    app:cardBackgroundColor="#8AECECEC"
+                    android:layout_margin="10dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="555xx"
+                                    android:textSize="20sp"
+                                    android:textColor="#212121"
+                                    android:paddingTop="15sp"
+                                    android:paddingLeft="10sp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Rs.3500"
+                                    android:textSize="20sp"
+                                    android:textColor="#212121"
+                                    android:padding="10dp"
+                                    android:paddingTop="12sp"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                                <Button
+                                    android:id="@+id/btn_remove_frock5"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#F8F8F8"
+                                    android:padding="5dp"
+                                    android:text="-"
+                                    android:textSize="20sp" />
+                                <TextView
+                                    android:id="@+id/frock5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"/>
+                                <Button
+                                    android:id="@+id/btn_add_frock5"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#F8F8F8"
+                                    android:padding="5dp"
+                                    android:text="+"
+                                    android:textSize="20sp" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!--cart for frock6-->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/frock6_card"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp"
+                    app:cardBackgroundColor="#8AECECEC"
+                    android:layout_margin="10dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="666xx"
+                                    android:textSize="20sp"
+                                    android:textColor="#212121"
+                                    android:paddingTop="15sp"
+                                    android:paddingLeft="10sp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Rs.2000"
+                                    android:textSize="20sp"
+                                    android:textColor="#212121"
+                                    android:padding="10dp"
+                                    android:paddingTop="12sp"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/btn_remove_frock6"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#F8F8F8"
+                                    android:padding="5dp"
+                                    android:text="-"
+                                    android:textSize="20sp"/>
+                                <TextView
+                                    android:id="@+id/frock6_num_view"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"/>
+                                <Button
+                                    android:id="@+id/btn_add_frock6"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#F8F8F8"
+                                    android:padding="5dp"
+                                    android:text="+"
+                                    android:textSize="20sp" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!--to show  sub-total -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="1dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sub Total"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="-15dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text=""/>
+
+            <TextView
+                android:id="@+id/sub_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"/>
+
+            <EditText
+                android:id="@+id/totalBox"
+                android:layout_width="275dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sub_total"
+                android:hint="Total"
+                android:inputType="none"
+                android:padding="16dp"
+                android:background="@drawable/edit_text_boarder"
+                android:layout_marginTop="1dp"/>
+
+
+        </LinearLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@drawable/bottomlayout"
+            app:menu="@menu/menu" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cart"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-        app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</FrameLayout>

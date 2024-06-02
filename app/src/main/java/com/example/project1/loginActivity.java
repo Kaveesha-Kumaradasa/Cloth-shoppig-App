@@ -1,3 +1,4 @@
+/*IM/2020/039*/
 package com.example.project1;
 
 import android.content.Intent;
@@ -14,11 +15,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class loginActivity extends AppCompatActivity {
 
+    BottomNavigationView bottomNavigationView;
     EditText email, password;
     private FirebaseAuth auth;
     TextView forgotpassword;
@@ -28,8 +31,9 @@ public class loginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.nav_login);
         auth = FirebaseAuth.getInstance();
-
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         forgotpassword = findViewById(R.id.forgotpassword);
@@ -42,10 +46,7 @@ public class loginActivity extends AppCompatActivity {
             }
         });
 
-
-
         Button myButton = findViewById(R.id.regbtn);
-
         myButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +57,28 @@ public class loginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            int itemId = item.getItemId();
+            if (itemId == R.id.nav_info) {
+                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                overridePendingTransition(0, 0);
+                finish();
+                return true;
+            } else if (itemId == R.id.nav_cart) {
+                startActivity(new Intent(getApplicationContext(), CartActivity.class));
+                overridePendingTransition(0, 0);
+                finish();
+                return true;
+            } else if (itemId == R.id.nav_login) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+
     }
+
 
 
     public void signIn(View view) {
@@ -98,4 +120,7 @@ public class loginActivity extends AppCompatActivity {
 
     }
 
-}
+    }
+
+
+/*IM/2020/039*/
